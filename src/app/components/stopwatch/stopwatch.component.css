@@ -1,0 +1,105 @@
+.stopwatch-container {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.stopwatch-main{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stopwatch-laps{
+    min-height: 550px;
+    max-height: 550px;
+    border-top: 1px solid rgb(206, 206, 206);
+    overflow-y: scroll;
+}
+
+
+.stopwatch-lap{
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: 1px solid rgb(206, 206, 206);
+}
+
+.lap-index{
+    margin-right: 20px;
+}
+
+.stopwatch-lap-input, .stopwatch-lap-difference{
+    min-height: 24px;
+    text-align: center;
+    font-size: 20px;
+    max-width: 24px;
+    background-color: inherit;
+    color: inherit;
+    border: none;
+}
+
+.stopwatch-lap-difference{
+    max-width: 120px;
+    margin-left: 20px;
+}
+
+.stopwatch-lap .blue{
+    color: dodgerblue;
+}
+
+.stopwatch-counter{
+    margin: 0;
+    padding: 0;
+    font-size: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.stopwatch-counter input{
+    max-width: 52px;
+    min-height: 52px;
+    font-size: inherit;
+    border: none;
+    background-color: inherit;
+    color: inherit;
+}
+
+.stopwatch-footer{
+    min-height: 80px;
+    border-top: 1px solid rgb(206, 206, 206);
+}
+
+.stopwatch-option{
+    display: flex;
+    color: inherit;
+    height: 100%;
+    width: 100%;
+}
+
+.stopwatch-line{
+    background-color: rgb(206, 206, 206);
+    height: 100%;
+    width: 1px;
+}
+
+.stopwatch-option .stopwatch-btn{
+    flex-grow: 1;
+    background-color: inherit;
+    border: none;
+    font-size: 30px;
+    color: inherit;
+    transition: all 0.3s ease-in-out;
+    min-width: 49.5%;
+}
+
+.stopwatch-option .stopwatch-btn.blue{
+    color: dodgerblue;
+}

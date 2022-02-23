@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Prompt', sans-serif;
+    margin: 0;
+    padding: 0;
+    max-height: 100vh;
+    max-width: 100vw;
+    transition: all 0.2s ease-in-out;
+    color: #333;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: white;
+}

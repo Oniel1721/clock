@@ -1,0 +1,30 @@
+<div class="selecting-header-info" *ngIf="currentAction">
+  <div class="all-selected-input">
+    <div
+      class="all-selected-active"
+      *ngIf="currentAction?.selected === alarms.length"
+    ></div>
+  </div>
+  <h4>Select all</h4>
+  <p class="account-selected">{{ currentAction?.selected }} selected</p>
+</div>
+
+<div class="alarm-list-container">
+  <div *ngFor="let alarm of alarms">
+    <app-alarm (toggle)="onToggleActive($event)" [alarm]="alarm"></app-alarm>
+  </div>
+</div>
+<img
+  id="add-new-alarm-btn"
+  class="add-new-alarm-btn"
+  src="../../../assets/plus.png"
+  alt="Add New Alarm"
+/>
+
+<div class="selecting-footer-options" *ngIf="currentAction">
+  <button class="footer-options-btn red">Decline</button>
+
+  <div class="timer-line"></div>
+
+  <button class="footer-options-btn">{{ currentAction?.name }}</button>
+</div>

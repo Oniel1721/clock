@@ -1,0 +1,10 @@
+<header class="header">
+    <h1 class="title">Clock</h1>
+    <div class="options">
+        <ng-template ngFor let-option [ngForOf]="options">
+            <div class="option" (click)="option.action()">
+                <img class="option-icon" [src]="option.iconUrl" [alt]="option.name">
+            </div>
+        </ng-template>
+    </div>
+</header>

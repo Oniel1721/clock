@@ -1,0 +1,20 @@
+<div [class]="getContainerClass(alarm)">
+    <section class="alarm-main">
+        <header *ngIf="alarm.isActive" class="alarm-header">
+            <img class="header-icon" src="../../../assets/clock.png" alt="Clock icon">
+            <p class="header-p">The alarm will ring in <span class="header-span">1 day, 19 hours, and 19 minutes</span>.</p>
+        </header>
+
+        <a routerLink="/edit/{{alarm.id}}" class="alarm-content">
+            <h4 class="alarm-hour">{{alarm.hour}}:{{parseMinutes(alarm.minute)}}</h4>
+            <h5 class="alarm-meridian">{{alarm.meridian?.toLowerCase()}}</h5>
+            <h6 class="alarm-days">{{parseDays(alarm)}}</h6>
+        </a>
+
+        <div (click)="toggleActive()" [class]="getActivatorClass(alarm)">
+            <div class="activator-border"></div>
+            <div [class]="getSwitchClass(alarm)"></div>
+            <div class="activator-border right"></div>
+        </div>
+    </section>
+</div>

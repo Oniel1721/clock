@@ -1,0 +1,38 @@
+<div class="stopwatch-container">
+  <div class="stopwatch-main">
+    <div class="stopwatch-counter">
+      <input type="text" [value]="hour">:
+      <input type="text" [value]="minute">:
+      <input type="text" [value]="second">.
+      <input type="text" [value]="mlsecond">
+    </div>
+  </div>
+  <div id="stopwatch-laps" *ngIf="laps.length > 0" class="stopwatch-laps">
+    <div class="stopwatch-lap" *ngFor="let lap of laps; index as i">
+      <div class="lap-index blue">{{ parseLapIndex(i) }}</div>
+      <input class="stopwatch-lap-input" type="text" [value]="lap.hour">:
+      <input class="stopwatch-lap-input" type="text" [value]="lap.minute">:
+      <input class="stopwatch-lap-input" type="text" [value]="lap.second">.
+      <input class="stopwatch-lap-input" type="text" [value]="lap.mlsecond">
+
+      <input class="stopwatch-lap-difference" type="text" [value]="lap.difference">
+    </div>
+  </div>
+  <div class="stopwatch-footer">
+    <div *ngIf="optionBtnIndex === 0" class="stopwatch-option show">
+      <button class="stopwatch-btn blue" (click)="startCounter()">Start</button>
+    </div>
+    <div *ngIf="optionBtnIndex === 1" class="stopwatch-option">
+      <button class="stopwatch-btn" (click)="stopCounter()">Pause</button>
+      <div class="stopwatch-line"></div>
+      <button class="stopwatch-btn" (click)="addLap()">Lap</button>
+    </div>
+    <div *ngIf="optionBtnIndex === 2" class="stopwatch-option">
+      <button class="stopwatch-btn blue" (click)="continueCounter()">
+        Resume
+      </button>
+      <div class="stopwatch-line"></div>
+      <button class="stopwatch-btn" (click)="resetCounter()">Reset</button>
+    </div>
+  </div>
+</div>
